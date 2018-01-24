@@ -87,6 +87,8 @@ share_id | optional | An ID for which piece of content or share this link belong
 Remember — authenticate your request!
 </aside>
 
+# Reporting
+
 ## Get Reporting
 
 ```bash
