@@ -51,10 +51,10 @@ var getPageData = function() {
       return '<img alt="' + alt + '" class="' + className + '" src="images/' + filename + '">';
     },
     javascript_include_tag: function(name) {
-      return '<script src="javascripts/' + name + '.js" type="text/javascript"></script>';
+      return '<script src="assets/javascripts/' + name + '.js" type="text/javascript"></script>';
     },
     stylesheet_link_tag: function(name, media) {
-      return '<link href="stylesheets/' + name + '.css" rel="stylesheet" type="text/css" media="' + media + '" />';
+      return '<link href="assets/stylesheets/' + name + '.css" rel="stylesheet" type="text/css" media="' + media + '" />';
     },
     langs: (config.language_tabs || []).map(function(lang) {
       return typeof lang == 'string' ? lang : lang.keys.first;
