@@ -22,7 +22,7 @@ api = kittn.authorize('SAMPLE_API_TOKEN')
 
 ```bash
 # With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
+curl "https://api.weavesocial.com"
   -H "weave-api-token: SAMPLE_API_TOKEN"
 ```
 
@@ -98,24 +98,22 @@ curl "https://api.weavesocial.com/reporting"
 
 ```json
 {
-  "id": 2,
+  "campaign_id": "MACYS_12",
   "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "clicks": 16872,
+  "revenue": "$14,389.41",
+  "orders": 104
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+This endpoint retrieves reporting on stats for overall performance, influencer performance, individual link performance, order details, and click data.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET https://api.weavesocial.com/reporting`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+campaign_id | The ID of the campaign to return stats on
