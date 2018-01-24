@@ -1,6 +1,6 @@
-# Introduction
+# Introduction - Weave API
 
-Welcome to the Weave API. Use our API to monetize your links, track sales that come through links, or track rich click data on those that click on your links.
+Welcome to the Weave API. Use our powerful API to monetize your links, track sales that come through links, or track rich click data on those that click on your links.
 
 Our links allow you to pass sub_ids so that all of your users can be individually tracked.
 
