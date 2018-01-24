@@ -8,28 +8,10 @@ Our links allow you to pass sub_ids so that all of your users can be individuall
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('SAMPLE_API_TOKEN')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('SAMPLE_API_TOKEN')
-```
-
 ```bash
 # With shell, you can just pass the correct header with each request
 curl "https://api.weavesocial.com"
   -H "weave-api-token: SAMPLE_API_TOKEN"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('SAMPLE_API_TOKEN');
 ```
 
 > Make sure to replace `SAMPLE_API_TOKEN` with your API token.
