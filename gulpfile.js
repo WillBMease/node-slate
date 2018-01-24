@@ -48,7 +48,7 @@ var getPageData = function() {
     page_classes: '',
     includes: includes,
     image_tag: function(filename, alt, className) {
-      return '<img alt="' + alt + '" class="' + className + '" src="images/' + filename + '">';
+      return '<img alt="' + alt + '" class="' + className + '" src="assets/images/' + filename + '">';
     },
     javascript_include_tag: function(name) {
       return '<script src="assets/javascripts/' + name + '.js" type="text/javascript"></script>';
