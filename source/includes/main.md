@@ -1,10 +1,8 @@
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Weave API. Use our API to monetize your links, track sales that come through links, or track rich click data on those that click on your links.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Our links allow you to pass sub_ids so that all of your users can be individually tracked.
 
 # Authentication
 
@@ -13,133 +11,87 @@ This example API documentation page was created with [Slate](https://github.com/
 ```ruby
 require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = Kittn::APIClient.authorize!('SAMPLE_API_TOKEN')
 ```
 
 ```python
 import kittn
 
-api = kittn.authorize('meowmeowmeow')
+api = kittn.authorize('SAMPLE_API_TOKEN')
 ```
 
 ```bash
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+  -H "weave-api-token: SAMPLE_API_TOKEN"
 ```
 
 ```javascript
 const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = kittn.authorize('SAMPLE_API_TOKEN');
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `SAMPLE_API_TOKEN` with your API token.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Weave uses an API token to authenticate your requests to your account.
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+All API requests must include this token in the header of the request:
 
-`Authorization: meowmeowmeow`
+`weave-api-token: SAMPLE_API_TOKEN`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>SAMPLE_API_TOKEN</code> with your personal API key.
 </aside>
 
-# Kittens
+# Links
 
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+## Create A Link
 
 ```bash
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+curl -X POST "https://api.weavesocial.com/link/create"
+  -H "weave-api-token: SAMPLE_API_TOKEN"
+  -d "user_id=SAMPLE_USER_ID"
+  -d "url=https://www.trackthiswebsite.com"
+  -d "share_id=SAMPLE_SHARE_ID"
+  -d "platform=youtube"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+{
+  "response": {
+    "status": "success",
+    "link": "http://weav.me/~link"
   }
-]
+}
 ```
 
-This endpoint retrieves all kittens.
+This endpoint creates a trackable link.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`POST https://api.weavesocial.com/link/create`
 
 ### Query Parameters
 
-Parameter | Default | Description
+Parameter | Required | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+user_id | yes | The ID to track which user this link is created for
+url | yes | The url being shared that you want to track
+platform | optional | Which social platform or website this was shared to
+share_id | optional | An ID for which piece of content or share this link belongs to
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — authenticate your request!
 </aside>
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+## Get Reporting
 
 ```bash
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+curl "https://api.weavesocial.com/reporting"
+  -H "weave-api-token: SAMPLE_API_TOKEN"
 ```
 
 > The above command returns JSON structured like this:
