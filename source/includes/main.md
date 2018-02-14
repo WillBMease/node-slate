@@ -83,6 +83,10 @@ curl "https://api.weavesocial.com/reports/brands"
 ```json
 {
   "brand_id": "thisbrand.com",
+  "links_shared": 107,
+	"facebook_shared": 72,
+	"twitter_shared": 35,
+	"unique_visitors": 15178,
   "clicks": 16872,
   "sales": 101,
   "items": 327,
@@ -97,7 +101,7 @@ curl "https://api.weavesocial.com/reports/brands"
 ```
 
 ```bash
-curl "https://api.weavesocial.com/reports/influencers"
+curl "https://api.weavesocial.com/reports/links"
   -H "weave-api-token: SAMPLE_API_TOKEN"
 ```
 
@@ -105,7 +109,11 @@ curl "https://api.weavesocial.com/reports/influencers"
 
 ```json
 {
+  "brand_id": "thisbrand.com",
   "influencer_id": 2837262,
+  "unique_visitors": 289,
+	"platform": "facebook",
+	"created_at": "2018-02-05 08:56:01+00",
   "clicks": 16872,
   "sales": 101,
   "items": 327,
@@ -163,6 +171,16 @@ This endpoint retrieves reporting on stats for overall performance, influencer p
 Parameter | Description
 --------- | -----------
 brand_id | The domain name of the brand to return stats on
+
+### HTTP Request
+
+`GET https://api.weavesocial.com/reports/links`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+link_id | The hash after /~ in the url to identify a specific link
 
 ### HTTP Request
 
