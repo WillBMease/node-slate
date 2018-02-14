@@ -82,11 +82,46 @@ curl "https://api.weavesocial.com/reporting"
 
 ```json
 {
-  "campaign_id": "MACYS_12",
-  "name": "Max",
+  "brand_id": "MACYS_12",
+  "influencer_id": 2837262,
   "clicks": 16872,
-  "revenue": "$14,389.41",
-  "orders": 104
+  "sales": 101,
+  "items": 327,
+  "returned_items": 6,
+  "gross_revenue": 5894.36,
+  "net_revenue": 5603.24,
+  "returned_revenue": 291.12,
+  "avg_order_size": 58.36,
+  "conversion_rate": 1.19,
+  "rev_per_click": 0.7
+}
+```
+
+```json
+{
+  "brand_id": "thisbrand.com",
+	"influencer_id": "2837262",
+	"item_name": "Chantecaille Pure Rosewater",
+	"advertiser": "thisbrand",
+	"sku": "294426",
+	"revenue": 68.00,
+	"quantity": 1,
+	"order_id": "201709251258041256107959",
+	"transaction_id": "6893770BB2368706DC236FA60FFC4EB0",
+	"returned": "FALSE",
+	"city": "Owosso",
+	"region": "Michigan",
+	"country": "US",
+	"ip_address": "24.236.181.113",
+	"latitude": "42.9965",
+	"longitude": "-84.1874",
+	"postal": "48867",
+	"device": "PC",
+	"os": "Windows",
+	"browser": "Chrome",
+	"transaction_date": "2018-01-18 23:02:55+00",
+	"ref_link": "weav.me/~p-kK",
+	"ref_link_id": "p-kK'
 }
 ```
 
@@ -94,10 +129,13 @@ This endpoint retrieves reporting on stats for overall performance, influencer p
 
 ### HTTP Request
 
-`GET https://api.weavesocial.com/reporting`
+`GET https://api.weavesocial.com/reports`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 campaign_id | The ID of the campaign to return stats on
+influencer_id | The ID of the influencer to return stats on
+share_id | The ID of the share to return stats on
+link_id | The ID of the link to return stats on
