@@ -82,7 +82,29 @@ curl "https://api.weavesocial.com/reports/brands"
 
 ```json
 {
-  "brand_id": "MACYS_12",
+  "brand_id": "thisbrand.com",
+  "clicks": 16872,
+  "sales": 101,
+  "items": 327,
+  "returned_items": 6,
+  "gross_revenue": 5894.36,
+  "net_revenue": 5603.24,
+  "returned_revenue": 291.12,
+  "avg_order_size": 58.36,
+  "conversion_rate": 1.19,
+  "rev_per_click": 0.7
+}
+```
+
+```bash
+curl "https://api.weavesocial.com/reports/influencers"
+  -H "weave-api-token: SAMPLE_API_TOKEN"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
   "influencer_id": 2837262,
   "clicks": 16872,
   "sales": 101,
@@ -113,7 +135,7 @@ curl "https://api.weavesocial.com/reports/orders"
 	"quantity": 1,
 	"order_id": "201709251258041256107959",
 	"transaction_id": "6893770BB2368706DC236FA60FFC4EB0",
-	"returned": "FALSE",
+	"returned": false,
 	"city": "Owosso",
 	"region": "Michigan",
 	"country": "US",
