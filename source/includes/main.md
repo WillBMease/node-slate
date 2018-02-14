@@ -71,10 +71,10 @@ Remember — authenticate your request!
 
 # Reporting
 
-## Get Reporting
+## Get Brand Report
 
 ```bash
-curl "https://api.weavesocial.com/reporting"
+curl "https://api.weavesocial.com/reports/brands"
   -H "weave-api-token: SAMPLE_API_TOKEN"
 ```
 
@@ -95,6 +95,11 @@ curl "https://api.weavesocial.com/reporting"
   "conversion_rate": 1.19,
   "rev_per_click": 0.7
 }
+```
+
+```bash
+curl "https://api.weavesocial.com/reports/orders"
+  -H "weave-api-token: SAMPLE_API_TOKEN"
 ```
 
 ```json
@@ -129,7 +134,7 @@ This endpoint retrieves reporting on stats for overall performance, influencer p
 
 ### HTTP Request
 
-`GET https://api.weavesocial.com/reports`
+`GET https://api.weavesocial.com/report`
 
 ### URL Parameters
 
