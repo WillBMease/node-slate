@@ -134,13 +134,20 @@ This endpoint retrieves reporting on stats for overall performance, influencer p
 
 ### HTTP Request
 
-`GET https://api.weavesocial.com/report`
+`GET https://api.weavesocial.com/reports/brands`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-campaign_id | The ID of the campaign to return stats on
-influencer_id | The ID of the influencer to return stats on
-share_id | The ID of the share to return stats on
-link_id | The ID of the link to return stats on
+brand_id | The domain name of the brand to return stats on
+
+### HTTP Request
+
+`GET https://api.weavesocial.com/reports/orders`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+brand_id | The domain name of the brand to return stats on
