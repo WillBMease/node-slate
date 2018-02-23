@@ -45,7 +45,9 @@ curl -X POST "https://api.weavesocial.com/link/create"
 {
   "response": {
     "status": "success",
-    "link": "http://weav.me/~link"
+    "link": "http://weav.me/~abc1",
+    "link_id": "abc1",
+    "affiliated": true
   }
 }
 ```
@@ -73,6 +75,8 @@ Remember — authenticate your request!
 
 ## Find Brand
 
+This endpoint allows you to see if a brand is in the Weave network
+
 ### HTTP Request
 
 `GET https://api.weavesocial.com/brands/find`
@@ -81,7 +85,7 @@ Remember — authenticate your request!
 
 Parameter | Description
 --------- | -----------
-domain | The domain name of the brand to return stats on
+domain | The domain name of the brand to find affiliate details about
 
 # Reporting
 
