@@ -69,6 +69,20 @@ share_id | optional | An ID for which piece of content or share this link belong
 Remember — authenticate your request!
 </aside>
 
+# Brands
+
+## Find Brand
+
+### HTTP Request
+
+`GET https://api.weavesocial.com/brands/find`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+domain | The domain name of the brand to return stats on
+
 # Reporting
 
 ## Get Brand Report
@@ -84,7 +98,7 @@ curl "https://api.weavesocial.com/reports/brands"
 {
   "brand_id": "thisbrand.com",
   "links_shared": 107,
-	"facebook_shared": 72,
+  "facebook_shared": 72,
 	"twitter_shared": 35,
 	"unique_visitors": 15178,
   "clicks": 16872,
@@ -156,7 +170,7 @@ curl "https://api.weavesocial.com/reports/orders"
 	"browser": "Chrome",
 	"transaction_date": "2018-01-18 23:02:55+00",
 	"ref_link": "weav.me/~p-kK",
-	"ref_link_id": "p-kK'
+	"ref_link_id": "p-kK"
 }
 ```
 
