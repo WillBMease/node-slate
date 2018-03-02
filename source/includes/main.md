@@ -1,6 +1,6 @@
 # Introduction - Weave API
 
-Welcome to the Weave API. Use our powerful API to monetize your links, track sales that come through links, or track rich click data on those that click on your links.
+Welcome to the Weave API documentation. Use our powerful API to monetize your links, track sales that come through links, or track rich click data on those that click on your links.
 
 Our links allow you to pass sub_ids so that all of your users can be individually tracked.
 
@@ -33,6 +33,7 @@ You must replace <code>SAMPLE_API_TOKEN</code> with your personal API key.
 ```bash
 curl -X POST "https://api.weavesocial.com/link/create"
   -H "weave-api-token: SAMPLE_API_TOKEN"
+  -d '{"username":"xyz","password":"xyz"}'
   -d "user_id=SAMPLE_USER_ID"
   -d "url=https://www.trackthiswebsite.com"
   -d "share_id=SAMPLE_SHARE_ID"
@@ -86,6 +87,38 @@ This endpoint allows you to see if a brand is in the Weave network
 Parameter | Description
 --------- | -----------
 domain | The domain name of the brand to find affiliate details about
+
+```bash
+curl "https://api.weavesocial.com/brands/find"
+  -H "weave-api-token: SAMPLE_API_TOKEN"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "brand_id": "thisbrand.com",
+  "links_shared": 107,
+  "facebook_shared": 72,
+	"twitter_shared": 35,
+	"unique_visitors": 15178,
+  "clicks": 16872,
+  "sales": 101,
+  "items": 327,
+  "returned_items": 6,
+  "gross_revenue": 5894.36,
+  "net_revenue": 5603.24,
+  "returned_revenue": 291.12,
+  "avg_order_size": 58.36,
+  "conversion_rate": 1.19,
+  "rev_per_click": 0.7
+}
+```
+
+```bash
+curl "https://api.weavesocial.com/reports/links"
+  -H "weave-api-token: SAMPLE_API_TOKEN"
+```
 
 # Reporting
 
