@@ -106,18 +106,6 @@ Remember — authenticate your request!
 
 ## Find Brand
 
-This endpoint allows you to see if a brand is in the Weave network
-
-### HTTP Request
-
-`GET https://api.weavesocial.com/brands/find`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-domain | The domain name of the brand to find affiliate details about
-
 ```bash
 curl "https://api.weavesocial.com/brands/find"
   -H "weave-api-token: SAMPLE_API_TOKEN"
@@ -135,6 +123,18 @@ curl "https://api.weavesocial.com/brands/find"
   }
 }
 ```
+
+This endpoint allows you to see if a brand is in the Weave network
+
+### HTTP Request
+
+`GET https://api.weavesocial.com/brands/find`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+domain | The domain name of the brand to find affiliate details about
 
 # Users
 
