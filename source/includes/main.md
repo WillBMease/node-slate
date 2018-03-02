@@ -124,6 +124,7 @@ curl "https://api.weavesocial.com/users/list"
   "name": "thisbrand",
   "domain"
 }
+```
 
 # Reporting
 
