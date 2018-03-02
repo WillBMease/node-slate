@@ -97,9 +97,12 @@ curl "https://api.weavesocial.com/brands/find"
 
 ```json
 {
-  "name": "thisbrand",
-  "domain": "thisbrand.com",
-  "affiliatable": true
+  "response": {
+    "status": "success",
+    "name": "thisbrand",
+    "domain": "thisbrand.com",
+    "affiliatable": true
+  }
 }
 ```
 
@@ -120,9 +123,15 @@ curl "https://api.weavesocial.com/users/list"
 
 ```json
 {
-  "status": "success",
-  "name": "thisbrand",
-  "domain"
+  "response": {
+    "status": "success",
+    "user_ids": [
+      "user_id_1",
+      "user_id_2",
+      "user_id_3",
+      "..."
+    ]
+  }
 }
 ```
 
