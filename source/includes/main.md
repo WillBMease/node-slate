@@ -55,8 +55,6 @@ curl -X POST "https://api.weavesocial.com/link/create"
 
 This endpoint creates a trackable link.
 
-## List Your Links
-
 ### HTTP Request
 
 `POST https://api.weavesocial.com/link/create`
@@ -69,6 +67,8 @@ user_id | yes | The ID to track which user this link is created for
 url | yes | The url being shared that you want to track
 platform | optional | Which social platform or website this was shared to
 share_id | optional | An ID for which piece of content or share this link belongs to
+
+## List Your Links
 
 ```bash
 curl -X POST "https://api.weavesocial.com/link/create"
