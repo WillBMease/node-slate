@@ -140,19 +140,6 @@ domain | The domain name of the brand to find affiliate details about
 
 ## List Users
 
-This endpoint allows you to see the user ids within your network
-
-### HTTP Request
-
-`GET https://api.weavesocial.com/users/list`
-
-### Query Parameters
-
-Parameter | Required | Description
---------- | ------- | -----------
-page | optional | The page of results to return (25 users at a time)
-
-
 ```bash
 curl "https://api.weavesocial.com/users/list"
   -H "weave-api-token: SAMPLE_API_TOKEN"
@@ -171,6 +158,18 @@ curl "https://api.weavesocial.com/users/list"
   }
 }
 ```
+
+This endpoint allows you to see the user ids within your network
+
+### HTTP Request
+
+`GET https://api.weavesocial.com/users/list`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+page | optional | The page of results to return (25 users at a time)
 
 # Reporting
 
@@ -203,6 +202,20 @@ curl "https://api.weavesocial.com/reports/brands"
 }
 ```
 
+This endpoint retrieves reporting on stats for overall performance, influencer performance, individual link performance, order details, and click data.
+
+### HTTP Request
+
+`GET https://api.weavesocial.com/reports/brands`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+brand_id | The domain name of the brand to return stats on
+
+## Get Links Report
+
 ```bash
 curl "https://api.weavesocial.com/reports/links"
   -H "weave-api-token: SAMPLE_API_TOKEN"
@@ -229,6 +242,18 @@ curl "https://api.weavesocial.com/reports/links"
   "rev_per_click": 0.7
 }
 ```
+
+### HTTP Request
+
+`GET https://api.weavesocial.com/reports/links`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+link_id | The hash after /~ in the url to identify a specific link
+
+## Get Orders Report
 
 ```bash
 curl "https://api.weavesocial.com/reports/orders"
@@ -262,28 +287,6 @@ curl "https://api.weavesocial.com/reports/orders"
 	"ref_link_id": "p-kK"
 }
 ```
-
-This endpoint retrieves reporting on stats for overall performance, influencer performance, individual link performance, order details, and click data.
-
-### HTTP Request
-
-`GET https://api.weavesocial.com/reports/brands`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-brand_id | The domain name of the brand to return stats on
-
-### HTTP Request
-
-`GET https://api.weavesocial.com/reports/links`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-link_id | The hash after /~ in the url to identify a specific link
 
 ### HTTP Request
 
