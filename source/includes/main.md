@@ -68,6 +68,42 @@ url | yes | The url being shared that you want to track
 platform | optional | Which social platform or website this was shared to
 share_id | optional | An ID for which piece of content or share this link belongs to
 
+```bash
+curl -X POST "https://api.weavesocial.com/link/create"
+  -H "weave-api-token: SAMPLE_API_TOKEN"
+  -d '{"username":"xyz","password":"xyz"}'
+  -d "user_id=SAMPLE_USER_ID"
+  -d "url=https://www.trackthiswebsite.com"
+  -d "share_id=SAMPLE_SHARE_ID"
+  -d "platform=youtube"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "response": {
+    "status": "success",
+    "link_ids": [
+      "abc1",
+      "abc2",
+      "abc3",
+      "..."
+    ]
+  }
+}
+```
+
+### HTTP Request
+
+`POST https://api.weavesocial.com/link/list`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+page | optional | The page of results to return (25 links at a time)
+
 <aside class="success">
 Remember — authenticate your request!
 </aside>
@@ -115,6 +151,13 @@ This endpoint allows you to see the user ids within your network
 ### HTTP Request
 
 `GET https://api.weavesocial.com/users/list`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+page | optional | The page of results to return (25 users at a time)
+
 
 ```bash
 curl "https://api.weavesocial.com/users/list"
