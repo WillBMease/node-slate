@@ -97,28 +97,33 @@ curl "https://api.weavesocial.com/brands/find"
 
 ```json
 {
-  "brand_id": "thisbrand.com",
-  "links_shared": 107,
-  "facebook_shared": 72,
-	"twitter_shared": 35,
-	"unique_visitors": 15178,
-  "clicks": 16872,
-  "sales": 101,
-  "items": 327,
-  "returned_items": 6,
-  "gross_revenue": 5894.36,
-  "net_revenue": 5603.24,
-  "returned_revenue": 291.12,
-  "avg_order_size": 58.36,
-  "conversion_rate": 1.19,
-  "rev_per_click": 0.7
+  "name": "thisbrand",
+  "domain": "thisbrand.com",
+  "affiliatable": true
 }
 ```
 
+# Users
+
+## List Users
+
+This endpoint allows you to see the user ids within your network
+
+### HTTP Request
+
+`GET https://api.weavesocial.com/users/list`
+
 ```bash
-curl "https://api.weavesocial.com/reports/links"
+curl "https://api.weavesocial.com/users/list"
   -H "weave-api-token: SAMPLE_API_TOKEN"
 ```
+
+```json
+{
+  "status": "success",
+  "name": "thisbrand",
+  "domain"
+}
 
 # Reporting
 
