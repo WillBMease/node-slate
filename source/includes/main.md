@@ -33,11 +33,7 @@ You must replace <code>SAMPLE_API_TOKEN</code> with your personal API key.
 ```bash
 curl -X POST "https://api.weavesocial.com/link/create"
   -H "weave-api-token: SAMPLE_API_TOKEN"
-  -d '{"username":"xyz","password":"xyz"}'
-  -d "user_id=SAMPLE_USER_ID"
-  -d "url=https://www.trackthiswebsite.com"
-  -d "share_id=SAMPLE_SHARE_ID"
-  -d "platform=youtube"
+  -d '{"user_id": SAMPLE_USER_ID, "url": "https://www.trackthiswebsite.com", "share_id": SAMPLE_SHARE_ID, "platform": "facebook" }'
 ```
 
 > The above command returns JSON structured like this:
@@ -71,13 +67,9 @@ share_id | optional | An ID for which piece of content or share this link belong
 ## List Your Links
 
 ```bash
-curl -X POST "https://api.weavesocial.com/link/create"
+curl -X POST "https://api.weavesocial.com/link/list"
   -H "weave-api-token: SAMPLE_API_TOKEN"
-  -d '{"username":"xyz","password":"xyz"}'
-  -d "user_id=SAMPLE_USER_ID"
-  -d "url=https://www.trackthiswebsite.com"
-  -d "share_id=SAMPLE_SHARE_ID"
-  -d "platform=youtube"
+  -d '{"page": 1}'
 ```
 
 > The above command returns JSON structured like this:
